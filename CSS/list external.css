@@ -1,0 +1,34 @@
+body {
+background-color:orange;
+ background-image:url("file:///D:/Worklab/Web/XML/pic_bulboff.gif");
+ background-repeat:no-repeat;
+ background-position:center;
+ margin-bottom:80%;
+  }
+  
+  p    {
+  font-size:1.25em;
+  }
+  
+  a:link, a:visited {
+   color:white;
+   }
+   
+   a:hover {
+    color:orange;
+	display:block;
+	}
+	
+   a:active {
+	color:blue;
+	}
+  
+
+
+ul.menu li {
+ display:inline;
+ background-color:black;
+ padding:10px;
+ margin:0px;
+ color:white;
+ }
