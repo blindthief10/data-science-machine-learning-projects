@@ -2,8 +2,5 @@ hello jake
 this
 that
 all
-<<<<<<< HEAD
 jumbo
 dumby
-=======
->>>>>>> parent of fe23df8... beest
