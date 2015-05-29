@@ -1,3 +1,0 @@
-Hello JavaScript
-Hello Python
-Hello Jane
