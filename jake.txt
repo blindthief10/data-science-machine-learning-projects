@@ -4,4 +4,3 @@ that
 all
 jumbo
 dumby
-bulls
