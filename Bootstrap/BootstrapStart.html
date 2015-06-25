@@ -12,17 +12,21 @@
    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="../CSS/collapsible.css">
+   <style>
+   .panther, .viking, .ram {padding:0px;}
+   img {width:100%; height:auto;}
+   </style>
  </head>
  
   <body>
   <br><br><br>
-	<button type="button" class="btn btn-info btn-lg" data-toggle="tooltip" data-placement="right" title="Whatever">Hover over me</button>
-	<script>
-	$(document).ready(function() {
-	$('[data-toggle="tooltip"]').tooltip();
-	})
-	</script>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 panther"><img src="panther.jpg" alt="panther" width="360" height="240"></div>
+			<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 viking"><img src="viking.jpg" alt="viking" width="360" height="240"></div>
+			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 ram"><img src="ram.jpg" alt="ram" width="360" height="240"></div>
+		</div>
+	</div>
 		
 	</body>
   

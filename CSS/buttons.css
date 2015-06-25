@@ -13,7 +13,8 @@
 		width:300px;
 		box-sizing:border-box;
 		transition:all 0.5s linear;
-		font-family:jokerman;
+		-webkit-transition:all 0.5s linear;
+		font-family:helvetica;
 		text-transform:uppercase;
 		}
 		
@@ -25,6 +26,7 @@
 			width:0;
 			z-index:-1;
 			height:100%;
+			-webkit-transition:all 0.5s linear;
 			transition:all 0.5s linear;
 			}
 			

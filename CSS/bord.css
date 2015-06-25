@@ -13,6 +13,7 @@
 		width:300px;
 		box-sizing:border-box;
 		transition:all 0.5s linear;
+		-webkit-transition:all 0.5s linear;
 		font-family:jokerman;
 		text-transform:uppercase;
 		margin-top:15px;
@@ -27,6 +28,7 @@
 							box-sizing:content-box;
 							border-color:#9b59b6;
 							transition:all 0.5s linear;
+							-webkit-transition:all 0.5s linear;
 							}
 		
 .bord:before {
@@ -36,6 +38,7 @@
 			height:100%;
 			border-width:1px 0;
 			transition-delay:0.05s;
+			-webkit-transition-delay:0.05s;
 			}
 	
 .bord:after	{
