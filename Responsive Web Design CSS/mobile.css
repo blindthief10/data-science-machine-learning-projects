@@ -12,10 +12,12 @@
     .col-s-10 {width: 83.33%;}
     .col-s-11 {width: 91.66%;}
     .col-s-12 {width: 100%;}
-	img {width:100%; height:auto;}
 	.container {position:relative; margin:0px auto; width:50%;}
+	.what {background:url("panther.jpg"); background-size:contain; background-repeat:no-repeat; height:200px;}
+	.who {background:url("ram.jpg"); background-size:contain; background-repeat:no-repeat; height:200px;}
+	.how {background:url("viking.jpg"); background-size:contain; background-repeat:no-repeat; height:200px;}
 }
 
-*{box-sizing:border-box; padding:0px; margin:0px;}
+*{box-sizing:border-box; padding:5px; margin:0px;}
 .row:after {content:""; clear:both; display:block;}
 [class*="col-"] {float:left; padding:15px;}
