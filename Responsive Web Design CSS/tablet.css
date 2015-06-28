@@ -1,4 +1,4 @@
-* {box-sizing:border-box; padding:5px; margin:0px;}
+* {box-sizing:border-box; padding:0px; margin:0px;}
 		.row:after {content:""; clear:both; display:block;}
 
 		[class*="col-"] {float:left; padding:5px;}
@@ -17,8 +17,11 @@
     .col-m-10 {width: 83.33%;}
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
-	.container {position:relative; margin:0px auto; width:50%;}
-	.what {background:url("panther.jpg"); background-size:contain; background-repeat:no-repeat; height:125px;}
-	.who {background:url("ram.jpg"); background-size:contain; background-repeat:no-repeat; height:125px;}
-	.how {background:url("viking.jpg"); background-size:contain; background-repeat:no-repeat; height:125px;}
+	.container {position:relative; margin:0px auto; width:100%; background:transparent;}
+	.who img {width:100%; height:auto;}
+	.what img {width:100%; height:auto;}
+	.which img {width:100%; height:auto;}
+	h1, p {font-family:helvetica; color:black;}
+	h1 {font-size:1.5em; text-align:center;}
+	p {font-size:1.2em; text-indent:15px; text-align:justify;}
 }
