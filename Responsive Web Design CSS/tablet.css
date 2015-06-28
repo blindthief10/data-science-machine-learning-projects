@@ -1,7 +1,7 @@
 * {box-sizing:border-box; padding:0px; margin:0px;}
 		.row:after {content:""; clear:both; display:block;}
 
-		[class*="col-"] {float:left; padding:5px;}
+		[class*="col-"] {float:left; padding:0px;}
 		
 @media only screen and (max-width: 1279px) and (min-width: 768px) {
     /* For tablets: */
@@ -18,9 +18,11 @@
     .col-m-11 {width: 91.66%;}
     .col-m-12 {width: 100%;}
 	.container {position:relative; margin:0px auto; width:100%; background:transparent;}
-	.who img {width:100%; height:auto;}
-	.what img {width:100%; height:auto;}
-	.which img {width:100%; height:auto;}
+	.who {background-color:cyan; height:100px;}
+	.who ul {list-style-type:none;}
+	.who ul li{text-align:center; margin:0px; font-size:1.2em;}
+	.who ul li a{text-decoration:none; color:white; font-family:helvetica; margin:0px;}
+	.who ul li a:hover{background-color:white; color:black;}
 	h1, p {font-family:helvetica; color:black;}
 	h1 {font-size:1.5em; text-align:center;}
 	p {font-size:1.2em; text-indent:15px; text-align:justify;}
