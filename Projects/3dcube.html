@@ -1,0 +1,87 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+	
+		<title>triangle</title>
+		<meta charset="utf-8">
+		<style>
+			.container {
+				width:200px;
+				height:200px;
+				position:relative;
+				perspective:1000px;
+				}
+				
+			#cube {
+				width:100%;
+				height:100%;
+				display:block;
+				position:absolute;
+				transform-style:preserve-3d;
+				transform:translateZ(-100px);
+				}
+				
+			#cube figure {
+				width:196px;
+				height:196px;
+				display:block;
+				position:absolute;
+				border:2px solid black;
+				opacity:1;
+				}
+				
+			#cube .front {
+				background:red;
+				transform:rotateY(0deg) translateZ(100px);
+				}
+				
+			#cube .back {
+				background:green;
+				transform:rotateY(180deg) translateZ(100px);
+				}
+				
+			#cube .right {
+				background:blue;
+				transform:rotateY(90deg) translateZ(100px);
+				}
+				
+			#cube .left {
+				background:yellow;
+				transform:rotateY(-90deg) translateZ(100px);
+				}
+				
+			#cube .top {
+				background:brown;
+				transform:rotateX(90deg) translateZ(100px);
+				}
+			
+			#cube .bottom {
+				background:brown;
+				transform:rotateX(-90deg) translateZ(100px);
+				}
+				
+			
+		
+		</style>
+		
+	</head>
+	
+	<body>
+		<section class="container">
+			<div id="cube">
+				<figure class="front"></figure>
+				<figure class="back"></figure>
+				<figure class="right"></figure>
+				<figure class="left"></figure>
+				<figure class="top"></figure>
+				<figure class="bottom"></figure>
+			</div>
+		</section>
+		
+	
+	</body>
+	
+</html>
+
