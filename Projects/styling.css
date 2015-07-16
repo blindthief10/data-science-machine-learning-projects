@@ -30,6 +30,11 @@ nav ul {
 nav  ul a li {
 	display:inline-block;
 	padding:20px;
+	float:left;
+	}
+	
+nav ul a .right {
+	float:right;
 	}
 	
 nav ul li:hover {
@@ -59,21 +64,21 @@ section article {
 	
 .handle {
 	box-sizing:border-box;
-	width:100%;
 	padding:15px 15px;
 	cursor:pointer;
 	text-align:left;
 	background:#005c48;
 	display:none;
+	width:100%;
 	color:white;
 	}
 	
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
 	nav ul {
 	max-height:0px;
 	}
 	.show {
-	max-height:22em;
+	max-height:29em;
 	}
 	nav ul li {
 		box-sizing:border-box;
