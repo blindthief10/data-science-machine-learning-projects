@@ -17,10 +17,13 @@
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
-	.container-fluid {width:100%;}
-	.navbar {background:cyan;}
-	.navigation {list-style-type:none; display:block; float:right;}
-	.navigation li {display:inline-block; height:30px;}
-	.navigation li a {display:inline-block; height:100%; width:100%; text-decoration:none; text-align:center; font-family:helvetica; font-size:1.2em; color:white; line-height:30px;}
-	.navigation li a:hover {background:white; color:black;}
+	.container {position:relative; margin:0px auto; width:100%; background:transparent;}
+	.who {background-color:cyan; height:100px;}
+	.who ul {list-style-type:none;}
+	.who ul li{text-align:center; margin:0px; font-size:1.2em;}
+	.who ul li a{text-decoration:none; color:white; font-family:helvetica; margin:0px;}
+	.who ul li a:hover{background-color:white; color:black;}
+	h1, p {font-family:helvetica; color:black;}
+	h1 {font-size:1.7em; text-align:center;}
+	p {font-size:1.4em; text-indent:10px; text-align:justify;}
 	}
