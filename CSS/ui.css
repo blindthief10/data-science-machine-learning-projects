@@ -2,7 +2,7 @@
 
  h1 {font-size:52px; text-align:center;}
 
-#first {top:0px; -webkit-animation-name:bulls; -webkit-animation-duration:6s; -webkit-animation-iteration-count:infinite;}
+#first {top:0px; -webkit-animation-name:bulls; -webkit-animation-duration:10s; -webkit-animation-iteration-count:infinite;}
 
 
 @-webkit-keyframes bulls {
