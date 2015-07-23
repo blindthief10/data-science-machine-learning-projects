@@ -103,7 +103,7 @@ body {
 	
 .content-one h1 {
 	font-family:helvetica;
-	color:white;
+	color:red;
 	font-size:2em;
 	opacity:0;
 	transition:opacity 1.5s 1s linear;
@@ -112,6 +112,12 @@ body {
 #trigger1:checked ~ .content-one h1 {
 	opacity:1;
 	}
+	
+h1 {
+	color:red;
+	}
+	
+
 	
 
 
