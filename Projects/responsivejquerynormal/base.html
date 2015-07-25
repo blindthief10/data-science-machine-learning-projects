@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+		<title>Sublime Text</title>
+		<meta charset="utf-8">
+		<meta name="viewport" width="device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="base.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>	
+	</head>
+
+	<body>
+		<div class="handler">Menu</div>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Sports</a></li>
+					<li><a href="#">Weather</a></li>
+					<li><a href="#">LogIn</a></li>
+					<li><a href="#">More</a></li>
+				</ul>
+			</nav>
+			<h1>This is awesome</h1>
+			<script>
+				$('.handler').click(function() {
+					$('nav ul').toggleClass('show');
+				});
+			</script>
+	</body>
+</html>
