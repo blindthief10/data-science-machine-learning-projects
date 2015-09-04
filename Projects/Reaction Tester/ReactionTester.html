@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+		<title>Some JavaScript Tutorial</title>
+		<meta charset="utf-8">
+		<meta name="viewport" width="device-width, initial-scale=1">
+		<style>
+		#box {
+			width:200px;
+			height:200px;
+			background: red;
+			box-sizing:border-box;
+			display: none;
+			position:relative;
+			cursor:pointer;
+		}
+			p {
+				color:black;
+				font-size:1.2em;
+				font-family: tahoma;
+				font-weight:bold;
+			}
+			p span#result {
+				background: red;
+				color:white;
+			}
+			#counter {
+				color:black;
+				font-weight:700;
+				font-family: verdana;
+				font-size:1.5em;
+			}
+		</style> 
+	</head>
+
+	<body>
+	<p id="apotelesma">Your time is:<span id="result"></span></p>
+	<article id="counter"></article><br>
+	<article id="test"></article>
+	<article id="box"></article>
+		<script>
+		var createdTime, clickedTime, reactionTime, z = 1, results = [];
+
+		function getRandom() {
+		var letters = '0123456789ABCDEF'.split('');
+		var color = '#';
+		for (var i = 1; i <= 6; i++) {
+			color = color + letters[Math.round(Math.random() * 15)];
+		}
+		return color;
+	}
+
+	function appearBox() {
+		var x = Math.random();
+		x = x * 4000;
+		setTimeout(function() {
+			if (x < 2000) {
+				document.getElementById('box').style.borderRadius = '100px';
+			}
+			else {
+				document.getElementById('box').style.borderRadius = '0px';
+			}
+			var top = Math.random();
+			top = top * 500;
+			var left = Math.random();
+			left = left * 600;
+			document.getElementById('box').style.top = top + 'px';
+			document.getElementById('box').style.left = left + 'px';
+			document.getElementById('box').style.backgroundColor = getRandom();
+			document.getElementById('box').style.display = 'block';
+			createdTime = Date.now();
+		}, x)
+	}
+	 
+	  document.getElementById('box').onclick = function() {
+	  	if (z < 10) {
+		clickedTime = Date.now();
+		reactionTime = (clickedTime - createdTime) / 1000;
+		this.style.display = 'none';
+		appearBox();
+		document.getElementById('result').innerHTML = reactionTime;
+		results.push(reactionTime);
+		results.sort(function(a, b) {
+			return a - b;
+		});
+		document.getElementById('counter').innerHTML = 'You have ' + (10 - z) + ' tries left!';
+		z++;
+		}
+		else {
+			definition = false;
+			document.getElementById('box').style.display = 'none';
+			document.getElementById('counter').innerHTML = 'Game over!!';
+			document.getElementById('apotelesma').innerHTML = 'Your best reaction was ' + results[0];
+		}
+	}
+
+			
+	appearBox(); 
+	</script>
+	</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+		<title>Rock, paper, scissors</title>
+		<meta charset="utf-8">
+		<meta name="viewport" width="device-width, initial-scale=1">
+		<style>
+		#indication {
+			font-family:tahoma;
+			font-weight:bold;
+			font-size:1.5em;
+		}
+		.buttons {
+			display: inline;
+			width:200px;
+			height:30px;
+			border-radius:10px;
+			font-size: 1.2em;
+			font-family: tahoma;
+			color:white;
+			cursor:pointer;
+			box-sizing:border-box;
+			border:1px solid black;
+			margin:0px 5px;
+			outline:none;
+		}
+		#rock {
+			background: red;
+		}
+		#paper {
+			background: blue;
+		}
+		#scissors {
+			background: purple;
+		}
+
+		#result {
+			font-family:tahoma;
+			font-weight: bold;
+			font-size:1.5em;
+			color:white;
+		}
+		</style>
+	</head>
+
+	<body>
+	<p id="indication">Take your pick!</p><br>
+	<button class="buttons" type="button" id="rock">Choose Rock!</button>
+	<button class="buttons" type="button" id="paper">Choose Paper!</button>
+	<button class="buttons" type="button" id="scissors">Choose Scissors!</button><br><br><hr>
+	<section id="result"></section>
+	<script>
+	    var computerChoice;
+
+	document.getElementById('rock').onclick = function() {
+		computerChoice = Math.random();
+		computerChoice = computerChoice * 3;
+		if (computerChoice < 1) {
+		computerChoice = 'rock';
+		}
+		else if (computerChoice < 2) {
+			computerChoice = 'paper';
+		}
+		else {
+			computerChoice = 'scissors';
+		}
+		if (computerChoice === 'rock') {
+			document.getElementById('result').style.backgroundColor = 'blue';
+			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
+		}
+		else if (computerChoice === 'paper') {
+			document.getElementById('result').style.backgroundColor = 'red';
+			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
+		}
+		else {
+			document.getElementById('result').style.backgroundColor = 'green';
+			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
+		}
+	}
+
+	document.getElementById('paper').onclick = function() {
+		computerChoice = Math.random();
+		computerChoice = computerChoice * 3;
+		if (computerChoice < 1) {
+		computerChoice = 'rock';
+		}
+		else if (computerChoice < 2) {
+			computerChoice = 'paper';
+		}
+		else {
+			computerChoice = 'scissors';
+		}
+		if (computerChoice === 'paper') {
+			document.getElementById('result').style.backgroundColor = 'blue';
+			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
+		}
+		else if (computerChoice === 'scissors') {
+			document.getElementById('result').style.backgroundColor = 'red';
+			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
+		}
+		else {
+			document.getElementById('result').style.backgroundColor = 'green';
+			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
+		}
+	}
+
+	document.getElementById('scissors').onclick = function() {
+		computerChoice = Math.random();
+		computerChoice = computerChoice * 3;
+		if (computerChoice < 1) {
+		computerChoice = 'rock';
+		}
+		else if (computerChoice < 2) {
+			computerChoice = 'paper';
+		}
+		else {
+			computerChoice = 'scissors';
+		}
+		if (computerChoice === 'scissors') {
+			document.getElementById('result').style.backgroundColor = 'blue';
+			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
+		}
+		else if (computerChoice === 'rock') {
+			document.getElementById('result').style.backgroundColor = 'red';
+			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
+		}
+		else {
+			document.getElementById('result').style.backgroundColor = 'green';
+			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
+		}
+	}
+	</script>
+	</body>
+
+</html>
