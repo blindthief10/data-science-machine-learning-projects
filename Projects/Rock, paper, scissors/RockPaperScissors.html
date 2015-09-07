@@ -26,17 +26,17 @@
 			margin:0px 5px;
 			outline:none;
 		}
-		#rock {
+		#petra {
 			background: red;
 		}
-		#paper {
+		#harti {
 			background: blue;
 		}
-		#scissors {
+		#psalidi {
 			background: purple;
 		}
 
-		#result {
+		#whatever {
 			font-family:tahoma;
 			font-weight: bold;
 			font-size:1.5em;
@@ -47,90 +47,57 @@
 
 	<body>
 	<p id="indication">Take your pick!</p><br>
-	<button class="buttons" type="button" id="rock">Choose Rock!</button>
-	<button class="buttons" type="button" id="paper">Choose Paper!</button>
-	<button class="buttons" type="button" id="scissors">Choose Scissors!</button><br><br><hr>
-	<section id="result"></section>
+	<button class="buttons" type="button" id="petra">Choose Rock!</button>
+	<button class="buttons" type="button" id="harti">Choose Paper!</button>
+	<button class="buttons" type="button" id="psalidi">Choose Scissors!</button><br><br><hr>
+	<div id="whatever"></div>
 	<script>
-	    var computerChoice;
-
-	document.getElementById('rock').onclick = function() {
-		computerChoice = Math.random();
-		computerChoice = computerChoice * 3;
-		if (computerChoice < 1) {
-		computerChoice = 'rock';
-		}
-		else if (computerChoice < 2) {
-			computerChoice = 'paper';
-		}
-		else {
-			computerChoice = 'scissors';
-		}
-		if (computerChoice === 'rock') {
-			document.getElementById('result').style.backgroundColor = 'blue';
-			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
-		}
-		else if (computerChoice === 'paper') {
-			document.getElementById('result').style.backgroundColor = 'red';
-			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
-		}
-		else {
-			document.getElementById('result').style.backgroundColor = 'green';
-			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
-		}
-	}
-
-	document.getElementById('paper').onclick = function() {
-		computerChoice = Math.random();
-		computerChoice = computerChoice * 3;
-		if (computerChoice < 1) {
-		computerChoice = 'rock';
-		}
-		else if (computerChoice < 2) {
-			computerChoice = 'paper';
-		}
-		else {
-			computerChoice = 'scissors';
-		}
-		if (computerChoice === 'paper') {
-			document.getElementById('result').style.backgroundColor = 'blue';
-			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
-		}
-		else if (computerChoice === 'scissors') {
-			document.getElementById('result').style.backgroundColor = 'red';
-			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
-		}
-		else {
-			document.getElementById('result').style.backgroundColor = 'green';
-			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
-		}
-	}
-
-	document.getElementById('scissors').onclick = function() {
-		computerChoice = Math.random();
-		computerChoice = computerChoice * 3;
-		if (computerChoice < 1) {
-		computerChoice = 'rock';
-		}
-		else if (computerChoice < 2) {
-			computerChoice = 'paper';
-		}
-		else {
-			computerChoice = 'scissors';
-		}
-		if (computerChoice === 'scissors') {
-			document.getElementById('result').style.backgroundColor = 'blue';
-			document.getElementById('result').innerHTML = 'We have a tie!! The computer also chose ' + computerChoice + '!';
-		}
-		else if (computerChoice === 'rock') {
-			document.getElementById('result').style.backgroundColor = 'red';
-			document.getElementById('result').innerHTML = 'Oh no you lost!! The computer chose ' + computerChoice + '!';
-		}
-		else {
-			document.getElementById('result').style.backgroundColor = 'green';
-			document.getElementById('result').innerHTML = 'You won!! The computer chose ' + computerChoice + '!';
-		}
-	}
+	var pcAnswer;
+	    function compute(userAnswer) {
+	    	pcAnswer = Math.random();
+	    	pcAnswer = pcAnswer * 3;
+	    	if (pcAnswer < 1) {
+	    		pcAnswer = 'rock';
+	    	}
+	    	else if (pcAnswer < 2) {
+	    		pcAnswer = 'paper';
+	    	}
+	    	else {
+	    		pcAnswer = 'scissors';
+	    	}
+	    	if (userAnswer === pcAnswer) {
+	    		return 'We have a tie! Computer also chose ' + pcAnswer + '!';
+	    	}
+	    	else {
+	    		if (userAnswer === 'rock') {
+	    			if (pcAnswer === 'paper') {
+	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
+	    			}
+	    			else {
+	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
+	    			}
+	    		}
+	    		else if (userAnswer === 'paper') {
+	    			if (pcAnswer === 'scissors') {
+	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
+	    			}
+	    			else {
+	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
+	    			}
+	    		}
+	    		else {
+	    			if (pcAnswer === 'rock') {
+	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
+	    			}
+	    			else {
+	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
+	    			}
+	    		}
+	    	}
+	    }
+	    document.getElementById('petra').onclick = console.log(compute('rock'));
+	    document.getElementById('harti').onclick = console.log(compute('paper'));
+	    document.getElementById('psalidi').onclick = console.log(compute('scissors'));
 	</script>
 	</body>
 
