@@ -1,13 +1,12 @@
 <!doctype html>
 
-<html lang="en-US">
-
-	<head>
-		<title>Rock, paper, scissors</title>
-		<meta charset="utf-8">
-		<meta name="viewport" width="device-width, initial-scale=1">
-		<style>
-		#indication {
+	<html lang='en-US'>
+		<head>
+			<title>tester</title>
+			<meta charset='utf-8'>
+			<meta name='viewport' width='device-width, initial-scale=1'>
+			<style>
+			#indication {
 			font-family:tahoma;
 			font-weight:bold;
 			font-size:1.5em;
@@ -26,33 +25,34 @@
 			margin:0px 5px;
 			outline:none;
 		}
-		#petra {
+		#rock {
 			background: red;
 		}
-		#harti {
+		#paper {
 			background: blue;
 		}
-		#psalidi {
+		#scissors {
 			background: purple;
 		}
 
-		#whatever {
+		#result {
 			font-family:tahoma;
 			font-weight: bold;
 			font-size:1.5em;
-			color:white;
+			color:black;
+			width:100%;
 		}
-		</style>
-	</head>
+			</style>
+		</head>
 
-	<body>
-	<p id="indication">Take your pick!</p><br>
-	<button class="buttons" type="button" id="petra">Choose Rock!</button>
-	<button class="buttons" type="button" id="harti">Choose Paper!</button>
-	<button class="buttons" type="button" id="psalidi">Choose Scissors!</button><br><br><hr>
-	<div id="whatever"></div>
-	<script>
-	var pcAnswer;
+		<body>
+		<p id="indication">Take your pick!</p><br>
+		<button class="buttons" type="button" id="rock">Choose Rock!</button>
+		<button class="buttons" type="button" id="paper">Choose Paper!</button>
+		<button class="buttons" type="button" id="scissors">Choose Scissors!</button><br><br><hr>
+		<div id="result"></div>
+			<script>
+			var pcAnswer;
 	    function compute(userAnswer) {
 	    	pcAnswer = Math.random();
 	    	pcAnswer = pcAnswer * 3;
@@ -66,39 +66,51 @@
 	    		pcAnswer = 'scissors';
 	    	}
 	    	if (userAnswer === pcAnswer) {
+	    		document.getElementById('result').style.background = 'gold';
 	    		return 'We have a tie! Computer also chose ' + pcAnswer + '!';
 	    	}
 	    	else {
 	    		if (userAnswer === 'rock') {
 	    			if (pcAnswer === 'paper') {
+	    				document.getElementById('result').style.background = 'red';
 	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
 	    			}
 	    			else {
+	    				document.getElementById('result').style.background = 'green';
 	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
 	    			}
 	    		}
 	    		else if (userAnswer === 'paper') {
 	    			if (pcAnswer === 'scissors') {
+	    				document.getElementById('result').style.background = 'red';
 	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
 	    			}
 	    			else {
+	    				document.getElementById('result').style.background = 'green';
 	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
 	    			}
 	    		}
 	    		else {
 	    			if (pcAnswer === 'rock') {
+	    				document.getElementById('result').style.background = 'red';
 	    				return 'Oh no! You lost! The Computer chose ' + pcAnswer + '!';
 	    			}
 	    			else {
+	    				document.getElementById('result').style.background = 'green';
 	    				return 'Congrats! You won! The computer chose ' + pcAnswer + '!';
 	    			}
 	    		}
 	    	}
 	    }
-	    document.getElementById('petra').onclick = console.log(compute('rock'));
-	    document.getElementById('harti').onclick = console.log(compute('paper'));
-	    document.getElementById('psalidi').onclick = console.log(compute('scissors'));
-	</script>
-	</body>
-
-</html>
+	    document.getElementById('rock').onclick = function() {
+	    	document.getElementById('result').innerHTML = compute('rock');
+		}
+		document.getElementById('paper').onclick = function() {
+	    	document.getElementById('result').innerHTML = compute('paper');
+		}
+		document.getElementById('scissors').onclick = function() {
+	    	document.getElementById('result').innerHTML = compute('scissors');
+		}
+			</script>
+		</body>
+	</html>
