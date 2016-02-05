@@ -41,7 +41,9 @@
 	<article id="test"></article>
 	<article id="box"></article>
 		<script>
-		var createdTime, clickedTime, reactionTime, z = 1, results = [];
+		'use strict';
+
+		var createdTime, clickedTime, reactionTime, z = 1, results = [], target = document.getElementById('box');
 
 		function getRandom() {
 		var letters = '0123456789ABCDEF'.split('');
@@ -54,28 +56,28 @@
 
 	function appearBox() {
 		var x = Math.random();
-		x = x * 4000;
+		x = x * 3000;
 		setTimeout(function() {
 			if (x < 2000) {
-				document.getElementById('box').style.borderRadius = '100px';
+				target.style.borderRadius = '100px';
 			}
 			else {
-				document.getElementById('box').style.borderRadius = '0px';
+				target.style.borderRadius = '0px';
 			}
 			var top = Math.random();
 			top = top * 500;
 			var left = Math.random();
 			left = left * 600;
-			document.getElementById('box').style.top = top + 'px';
-			document.getElementById('box').style.left = left + 'px';
-			document.getElementById('box').style.backgroundColor = getRandom();
-			document.getElementById('box').style.display = 'block';
+			target.style.top = top + 'px';
+			target.style.left = left + 'px';
+			target.style.backgroundColor = getRandom();
+			target.style.display = 'block';
 			createdTime = Date.now();
 		}, x)
 	}
 	 
-	  document.getElementById('box').onclick = function() {
-	  	if (z < 10) {
+	  target.onclick = function() {
+	  	if (z < 5) {
 		clickedTime = Date.now();
 		reactionTime = (clickedTime - createdTime) / 1000;
 		this.style.display = 'none';
@@ -85,12 +87,17 @@
 		results.sort(function(a, b) {
 			return a - b;
 		});
-		document.getElementById('counter').innerHTML = 'You have ' + (10 - z) + ' tries left!';
+		document.getElementById('counter').innerHTML = 'You have ' + (5 - z) + ' tries left!';
 		z++;
-		}
-		else {
-			definition = false;
-			document.getElementById('box').style.display = 'none';
+		} else {
+			clickedTime = Date.now();
+			reactionTime = (clickedTime - createdTime) / 1000;
+			this.style.display = 'none';
+			document.getElementById('result').innerHTML = reactionTime;
+			results.push(reactionTime);
+			results.sort(function(a, b) {
+				return a - b;
+			});
 			document.getElementById('counter').innerHTML = 'Game over!!';
 			document.getElementById('apotelesma').innerHTML = 'Your best reaction was ' + results[0];
 		}
