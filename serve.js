@@ -12,5 +12,15 @@ function add() {
 	return innerCove;
 }
 
-var result = add();
-console.log(result());
+function roar() {
+	var arr = [1,2,4,5,8,23,31];
+	function clearing() {
+		arr.map(function(x) {
+			return arr[x];
+		})
+	}
+	return clearing;
+}
+
+var resultados = roar();
+console.log(resultados());

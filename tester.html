@@ -10,12 +10,19 @@
 
 		<body>
 		<script>
-		var bigArr = [{firstName:'Kostas', lastName:'Diakogiannis'},{firstName:'Joanne',lastName:'Kentrou'},{firstName:'Jim', lastName:'Reny'}];
-		for (var i = 0; i < bigArr.length; i++) {
-			for (var x in bigArr[i]) {
-				console.log(bigArr[i][x])
+		function cluster() {
+			var count = 0, arr = [2,5,8,23,31];
+			function firstCove() {
+				arr = arr.filter(function(x) {
+					return x > 10;
+				})
+				return arr;
 			}
+			return firstCove;
 		}
+
+		var result = cluster();
+		console.log(result());
 		</script>
 		</body>
 
