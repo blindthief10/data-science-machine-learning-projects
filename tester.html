@@ -9,20 +9,42 @@
 		</head>
 
 		<body>
+		<div>
+		<h4>This is it!</h4>
+		</div>
 		<script>
-		function cluster() {
-			var count = 0, arr = [2,5,8,23,31];
-			function firstCove() {
-				arr = arr.filter(function(x) {
-					return x > 10;
-				})
-				return arr;
-			}
-			return firstCove;
+
+		var arr = [0,2,8,5,9];
+
+		
+		var x = Math.floor(Math.random() * 10);
+		
+
+		if (arr.indexOf(x) === -1) {
+			arr.push(x);
 		}
 
-		var result = cluster();
-		console.log(result());
+		console.log(arr);
+
+		/* function generateNumber() {
+			var x = Math.floor(Math.random() * 10), count = 0;
+			for (var i = 0; i , arr.length; i++) {
+				if (x === arr[i]) {
+					i = 0;
+					x = Math.floor(Math.random() * 10);
+				} else {
+					count++;
+				}
+			}
+			if (count === arr.length) {
+				arr = arr.push(x);
+				return arr;
+			}
+		}
+
+		console.log(generateNumber()); */
+
+
 		</script>
 		</body>
 
