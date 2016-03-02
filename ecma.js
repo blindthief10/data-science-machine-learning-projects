@@ -1,5 +1,27 @@
+'use strict';
 
-var bigArr = [{firstName:'Kostas', lastName:'Diakogiannis'},{firstName:'Joanne',lastName:'Kentrou'},{firstName:'Jim', lastName:'Reny'}];
+
+var userInput = 'takis';
+(function test(...roaming) {
+	for (let i = 0; i < roaming.length; i++) {
+		console.log(roaming[i]);
+	}
+})('joanne','john','george','jake',userInput);
+
+var obj = {
+	foo: (a,b) => {return a + b;}
+};
+
+function functionieren(x,y = 3,z = 5) {
+	return x + y + z;
+};
+
+console.log(functionieren(1));
+
+
+var bigArr = [{firstName:'Kostas', lastName:'Diakogiannis'},
+			{firstName:'Joanne',lastName:'Kentrou'},
+			{firstName:'Jim', lastName:'Reny'}];
 	for (var i = 0; i < bigArr.length; i++) {
 		for (var x in bigArr[i]) {
 			console.log(bigArr[i][x])
@@ -67,5 +89,8 @@ function rightNextToIt() {
 
 var result = rightNextToIt();
 console.log(result());
+
+
+
 
 
