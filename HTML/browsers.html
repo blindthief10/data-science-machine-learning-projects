@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html lang="en-US">
+
+	<head>
+	
+		<title>Cross Browser Testing</title>
+		<meta charset="utf-8">
+		<style>
+		div {
+			width:150px;
+			height:300px;
+			background-color:orange;
+			box-sizing:border-box;
+			border-radius:20px;
+			transition:all 1s linear;
+			-webkit-transition:all 1s linear;
+			overflow:hidden;
+			}
+			
+			div:before {
+					content:"This is a testing!!!";
+					}
+			
+		div:hover {
+				background-color:purple;
+				width:1920px;
+				overflow:hidden;
+				}
+			
+		div h3 {
+				font-size:1.5 em;
+				font-family:helvetica;
+				color:black;
+				
+				}
+				
+		div h3:after {
+					content:"This is some Header";
+					}
+				
+		div p {
+				font-size:0.8 em;
+				font-family:jokerman;
+				color:white;
+				
+				}
+				
+		div p:after {
+					content:"This is some text";
+					}
+		</style>
+		
+	</head>
+	
+	<body>
+		<div>
+			<h3></h3>
+			<p></p>
+		</div>
+		
+		<div class="second">
+			<h3></h3>
+			<p></p>
+		</div>
+	
+	</body>
+	
+</html>

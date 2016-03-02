@@ -1,0 +1,89 @@
+body {
+	margin:0;
+	padding:0;
+	background: orange;
+	color:white;
+}
+
+
+h1 {
+	position: relative;
+	font-size:2.5em;
+	text-align: center;
+	font-family:'Fira-Mono';
+	font-weight: 700;
+	top:50px;
+}
+
+h1::selection, input::selection, label::selection {
+	background: black;
+	color:red;
+}
+
+form {
+	position:relative;
+	top:100px;
+	margin:auto;
+	width:50%;
+	border:1px solid black;
+	text-align: center;
+}
+
+form label {
+	font-family: tahoma;
+	font-size: 1.2em;
+	margin: auto;
+}
+
+form input  {
+	position:relative;
+	margin:auto;
+	width:50%;
+	height:50px;
+	margin-bottom: 30px;
+	margin-top:10px;
+	font-family:'Fira-Mono';
+	font-size:1.5em;
+	border:none;
+	border-radius: 10px;
+}
+
+input:focus {
+	outline:none;
+	transition:box-shadow 0.2s linear;
+}
+
+
+#submission {
+	position:relative;
+	width:15%;
+	height:50px;
+	background: red;
+	color:#fff;
+	margin:auto;
+	border:1px solid black;
+	border-radius:5px;
+	font-family:tahoma;
+	font-size:1em;
+	margin-bottom:30px;
+	text-transform: uppercase;
+}
+
+#submission:hover {
+	cursor:pointer;
+	background:#fff;
+	color:red;
+}
+
+input:focus {
+	box-shadow:5px 5px 10px 2px grey;
+}
+
+
+
+
+
+
+
+
+
