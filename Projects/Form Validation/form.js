@@ -7,9 +7,9 @@ $(document).ready(function() {
 
 function checkValidity(pattern,selector) {
 			if (selector.val().match(pattern)) {
-				return 'This is nice match!!';
+				return 'Your email was valid! Well done!';
 			}else {
-				return 'Please give us another email!!';
+				return 'Invalid email!';
 			}
 		}
 
