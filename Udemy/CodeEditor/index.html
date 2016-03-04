@@ -13,19 +13,31 @@
 		<body>
 			<section id='wrapper'>
 				<nav id="menu">
-					<section id="logo">CodeEditor</section>
+					<section id="logo"><h2>CodeEditor</h2></section>
 					<section id="buttonDiv"><button id="runButton">Run</button></section>
 					<ul id="toggles">
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>JavaScript</li>
-						<li>Result</li>
+						<li class="active" id="html"><h5>HTML</h5></li>
+						<li id="css"><h5>CSS</h5></li>
+						<li id="javascript"><h5>JavaScript</h5></li>
+						<li id="result" class="active"><h5>Result</h5></li>
 					</ul>
 				</nav>
-				<section class="codeContainer" id="htmlContainer"></section>
-				<section class="codeContainer" id="cssContainer"></section>
-				<section class="codeContainer" id="javascriptContainer"></section>
-				<section class="codeContainer" id="resultContainer"></section>
+				<section class="codeContainer" id="htmlContainer">
+					<h3>HTML</h3>
+					<textarea id="htmlCode">Example Code</textarea>
+				</section>
+				<section class="codeContainer" id="cssContainer">
+					<h3>CSS</h3>
+					<textarea id="cssCode">Example Code</textarea>
+				</section>
+				<section class="codeContainer" id="javascriptContainer">
+					<h3>JavaScript</h3>
+					<textarea id="javascriptCode">Example Code</textarea>
+				</section>
+				<section class="codeContainer" id="resultContainer">
+					<h3>Result</h3>
+					<iframe id="inlineFrame" src=""></iframe>
+				</section>
 			</section>
 			<script src="code.js"></script>
 		</body>

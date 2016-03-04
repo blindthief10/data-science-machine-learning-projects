@@ -26,12 +26,13 @@ nav {
 }
 
 #logo {
-	font-size:1.9em;
-	width:10%;
-	padding-left:2%;
-	margin-left:2%;
+	position:relative;
+	width:15%;
 	text-align:center;
-	margin-top:12px;
+	height:30px;
+	bottom:20px;
+	margin-left:2%;
+	box-sizing: border-box;
 }
 
 #buttonDiv {
@@ -59,25 +60,77 @@ nav {
 	text-align:center;
 	list-style-type: none;
 	width:50%;
+	height:100%;
 }
 
 #toggles li {
-	display:inline-block;
+	float:left;
 	font-size:1.2em;
-	margin:0;
+	margin-top:0px;
 	padding:0;
-	width:24%;
-	border-right:1px solid black;
+	width:25%;
 	box-sizing: border-box;
+	height:100%;
 }
 
 .codeContainer {
 	float:left;
-	background:orange;
-	height:300px;
-	width:25%;
 	margin:0;
 	padding:0;
+	border-right:1px solid black;
+	box-sizing: border-box;
+	width:50%;
 }
+
+.codeContainer textarea {
+	width:100%;
+	height:100%;
+	border:none;
+	font-family:monotype;
+	font-size:1.2em;
+	padding:2%;
+	box-sizing: border-box;
+}
+
+.codeContainer textarea:focus {
+	outline:none;
+}
+
+h3 {
+	color:black;
+	float:right;
+	margin-right:3%;
+	margin-top:5px;
+}
+
+#cssContainer, #javascriptContainer {
+	display:none;
+}
+
+iframe {
+	display:block;
+	height:100%;
+	width:80%;
+	margin:auto;
+	box-sizing: border-box;
+	border:none;
+}
+
+li.active {
+	background:darkgreen;
+}
+
+h5 {
+	display:block;
+	width:100%;
+	margin-top:20px;
+}
+
+h2 {
+	display:block;
+	width:100%;
+}
+
+
 
 
