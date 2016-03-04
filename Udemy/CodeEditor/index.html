@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+	<html lang="en-US">
+
+		<head>
+			<title>My Personal Code Editor</title>
+			<meta charset="utf-8">
+			<meta name="viewport" width="device-width, initial-scale=1">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+			<link rel="stylesheet" href="code.css">
+		</head>
+
+		<body>
+			<section id='wrapper'>
+				<nav id="menu">
+					<section id="logo">CodeEditor</section>
+					<section id="buttonDiv"><button id="runButton">Run</button></section>
+					<ul id="toggles">
+						<li>HTML</li>
+						<li>CSS</li>
+						<li>JavaScript</li>
+						<li>Result</li>
+					</ul>
+				</nav>
+				<section class="codeContainer" id="htmlContainer"></section>
+				<section class="codeContainer" id="cssContainer"></section>
+				<section class="codeContainer" id="javascriptContainer"></section>
+				<section class="codeContainer" id="resultContainer"></section>
+			</section>
+			<script src="code.js"></script>
+		</body>
+
+	</html>
