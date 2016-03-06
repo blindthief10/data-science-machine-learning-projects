@@ -3,38 +3,27 @@ $(document).ready(function() {
 		$('.slide').first().addClass('active');
 		$('.slide').hide();
 		$('.active').show();
-		function goNext(selectedClass,oppositeClass,meth) {
-		if ($('.active').hasClass(selectedClass)) {
-			slider.find('.active').fadeOut(speed).addClass('previous');
-			slider.find('.previous').removeClass('active');
-			slider.find('.' + oppositeClass).fadeIn(speed).addClass('active');
-			slider.find('.previous').removeClass('previous');
+		function goNext(selectedClass,oppositeClass,classActivate,previousClass) {
+		if ($('.' + classActivate).hasClass(selectedClass)) {
+			slider.find('.' + classActivate).fadeOut(speed).addClass(previousClass);
+			slider.find('.'+previousClass).removeClass(classActivate);
+			slider.find('.' + oppositeClass).fadeIn(speed).addClass(classActivate);
+			slider.find('.'+previousClass).removeClass(previousClass);
 		} else {
-		slider.find('.active').fadeOut(speed).addClass('previous');
-		slider.find('.previous').removeClass('active');
-		slider.find('.previous').next().fadeIn(speed).addClass('active');
-		slider.find('.previous').removeClass('previous');
+		slider.find('.' + classActivate).fadeOut(speed).addClass(previousClass);
+		slider.find('.'+previousClass).removeClass(classActivate);
+		selectedClass === 'last' ? slider.find('.'+previousClass).next().fadeIn(speed).addClass(classActivate) : 
+		slider.find('.'+previousClass).prev().fadeIn(speed).addClass(classActivate);
+		slider.find('.'+previousClass).removeClass(previousClass);
 			}
 		}
-	$('#next').on('click', function(event) {
-		event.preventDefault();
-		goNext('last','first');
+	$('#next').on('click', function() {
+		goNext('last','first','active','previous');
 	});
-	$('#prev').on('click', function(event) {
-		event.preventDefault();
-		if ($('.active').hasClass('first')) {
-			slider.find('.active').fadeOut(speed).addClass('previous');
-			slider.find('.previous').removeClass('active');
-			slider.find('.last').fadeIn(speed).addClass('active');
-			slider.find('.previous').removeClass('previous');
-		} else {
-		slider.find('.active').fadeOut(speed).addClass('previous');
-		slider.find('.previous').removeClass('active');
-		slider.find('.previous').prev().fadeIn(speed).addClass('active');
-		slider.find('.previous').removeClass('previous');
-		}
+	$('#prev').on('click', function() {
+		goNext('first','last','active','previous');
 	});
 	setInterval(function() {
-		goNext('last','first');
+		goNext('last','first','active','previous');
 	},5000);
 });
