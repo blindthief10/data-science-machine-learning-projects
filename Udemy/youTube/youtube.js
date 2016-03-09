@@ -29,7 +29,6 @@ function search() {
 	var q = $('#query').val();
 	$('#results').html('');
 	$('buttons').html('');
-
 	//use the get method for youtube api
 
 	$.get('https://www.googleapis.com/youtube/v3/search',{
@@ -38,7 +37,8 @@ function search() {
 		type: 'video',
 		key: 'AIzaSyATwnllqOI9vDBM3hGiXwmnJQzxA-cFa5M'
 	}, function(data) {
-		var nextPageToken = data.nextPageToken, previousPageToken = data.previousPageToken;
+		var nextPageToken = data.nextPageToken, previousPageToken = data.prevPageToken;
+		console.log(previousPageToken);
 		$.each(data.items, function(i, item) {
 			var output = getOutput(item);
 			$('#results').append(output);
@@ -52,7 +52,6 @@ function nextPage() {
 	var token = $('#next-button').data('token'), q = $('#query').val();
 	$('#results').html('');
 	$('buttons').html('');
-
 	//use the get method for youtube api
 
 	$.get('https://www.googleapis.com/youtube/v3/search',{
@@ -62,7 +61,8 @@ function nextPage() {
 		type: 'video',
 		key: 'AIzaSyATwnllqOI9vDBM3hGiXwmnJQzxA-cFa5M'
 	}, function(data) {
-		var nextPageToken = data.nextPageToken, previousPageToken = data.previousPageToken;
+		var nextPageToken = data.nextPageToken, previousPageToken = data.prevPageToken;
+		console.log(previousPageToken);
 		$.each(data.items, function(i, item) {
 			var output = getOutput(item);
 			$('#results').append(output);
@@ -86,7 +86,7 @@ function prevPage() {
 		type: 'video',
 		key: 'AIzaSyATwnllqOI9vDBM3hGiXwmnJQzxA-cFa5M'
 	}, function(data) {
-		var nextPageToken = data.nextPageToken, previousPageToken = data.previousPageToken;
+		var nextPageToken = data.nextPageToken, previousPageToken = data.prevPageToken;
 		$.each(data.items, function(i, item) {
 			var output = getOutput(item);
 			$('#results').append(output);
@@ -111,12 +111,17 @@ function getOutput(item) {
 				return generated;
 }
 
-function getButtons(prevPageToken,nextPageToken) {
+function getButtons(previousPageToken,nextPageToken) {
 	var q = $('#query').val();
+	if(previousPageToken === undefined) {
+		var btnoutput = '<section class="button-container"><button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' +
+		'onclick="nextPage();">Next Page</button></section>';
+	}else {
 		var btnoutput = '<section class="button-container">'+
-		'<button id="prev-button" class="paging-button" data-token="'+prevPageToken+'" data-query="'+q+'"' +
+		'<button id="prev-button" class="paging-button" data-token="'+previousPageToken+'" data-query="'+q+'"' +
 		'onclick="prevPage();">Prev Page</button><button id="next-button" class="paging-button" data-token="'+nextPageToken+'" data-query="'+q+'"' +
 		'onclick="nextPage();">Next Page</button></section>';
+	}
 	return btnoutput;
 }
 
