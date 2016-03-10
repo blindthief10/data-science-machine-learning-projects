@@ -20,7 +20,7 @@ $(document).ready(function() {
 	});
 	$('#gallery li').on('mouseenter',function() {
 		var title = $(this).data('title'),desc = $(this).data('desc');
-		$(this).find('a').append('<section class="overlay"><h3>'+title+'</h3><p>'+desc+'</p>');
+		$(this).find('a').append('<section class="overlay"><h3>'+title+'</h3><p>'+desc+'</p></section>');
 		$('.overlay').fadeIn(350);
 	});
 	$('#gallery li').on('mouseleave',function() {
