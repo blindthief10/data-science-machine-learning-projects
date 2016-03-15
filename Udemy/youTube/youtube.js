@@ -24,6 +24,7 @@ $(document).ready(function() {
 });
 
 
+// this is the functiion that we query from the search and request the data by using the Youtube Search API
 
 function search() {
 	var q = $('#query').val();
@@ -47,6 +48,9 @@ function search() {
 		$('#buttons').html(buttons);
 	});
 }
+
+
+// Here is the function that is executed when the next page button is clicked and gets you to the next5 results
 
 function nextPage() {
 	var token = $('#next-button').data('token'), q = $('#query').val();
@@ -72,6 +76,8 @@ function nextPage() {
 	});
 }
 
+/*Same as the next page but for previous page. Note that the default api does not use a previous
+page button if the results are in the first page*/
 function prevPage() {
 	var token = $('#prev-button').data('token'), q = $('#query').val();
 	$('#results').html('');
@@ -96,6 +102,7 @@ function prevPage() {
 	});
 }
 
+// Displaying to html page our API results
 function getOutput(item) {
 	var unique = item.id.videoId;
 	var title = item.snippet.title;
@@ -110,6 +117,9 @@ function getOutput(item) {
 					'on' + videoDate + '</small><p>'+ description + '</p></section></li><section class="clearfix"></section> ';
 				return generated;
 }
+
+/*Create previous and next page buttons in html page. The previous button is not generated
+if the results are on the first page*/
 
 function getButtons(previousPageToken,nextPageToken) {
 	var q = $('#query').val();
