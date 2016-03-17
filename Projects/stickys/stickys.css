@@ -1,0 +1,9 @@
+body {
+	font-family: 'Lucida Grande', 'helvetica', 'sans-serif';
+	background-image: url('images/corkboard.jpg');
+}
+
+#newnote {
+	font-size: 1.8em;
+	padding:10px;
+}
