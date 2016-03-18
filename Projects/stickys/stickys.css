@@ -26,8 +26,8 @@ body {
 }
 
 .note {
-	background:black;
-	width:300px;
+	background:yellow;
+	width:25%;
 	height:400px;
 	color:white;
 	margin:75px 10px 0 10px;
@@ -41,7 +41,7 @@ body {
 	position: absolute;
 	top:-15px;
 	right: -15px;
-	z-index:500;
+	z-index:1000;
 }
 
 .closebutton:hover {
@@ -99,6 +99,7 @@ body {
 	border-radius: 5px;
 	font-size:1.2em;
 	transition:all 0.3s linear;
+	z-index:600;
 }
 
 .btn:hover {
