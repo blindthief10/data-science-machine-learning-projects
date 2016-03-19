@@ -5,7 +5,8 @@ $(document).ready(function() {
 			'<input type="text" name="title" placeholder="Put your title here">' +
 			'<label id="area" for="text">Note\'s Body Text</label><br>' +
 			'<textarea name="text"></textarea>' +
-			'<button class="btn">Save Note and Exit</button></div>', speed = 500;
+			'<button class="btn">Save Note and Exit</button></div>', 
+			speed = 500;
 	
 	$('#newnote').on('click',function() {
 		$('body').append('<div class="overlay"></div>');
@@ -13,11 +14,12 @@ $(document).ready(function() {
 		$('.closebutton').on('click',function() {
 			$(this).closest('body').find('.overlay').fadeOut(speed);
 			$(this).parent().fadeOut(speed);
-			setTimeout(function() {
-				$('.overlay').remove();
-				$('.modal').remove();
-			},1000);
-		});
+				setTimeout(function() {
+					$('.overlay').remove();
+					$('.modal').remove();
+				},speed);
+			});
+
 		$('.btn').on('click',function() {
 			var title = $('input').val(), text = $('textarea').val();
 			if(title === '' || text === '') {
@@ -25,15 +27,17 @@ $(document).ready(function() {
 			}else {
 				$(this).closest('body').find('.overlay').fadeOut(speed);
 				$(this).parent().fadeOut(speed);
-				setTimeout(function() {
-					$('.overlay').remove();
-					$('.modal').remove();
-			},1000);
-				$(this).closest('body').append('<div class="note"></div>');
+					setTimeout(function() {
+						$('.overlay').remove();
+						$('.modal').remove();
+					},speed);
+				$('body').append('<div class="note"><div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit">Edit Note</button><div>');
+				$('.note').find('.edit').next().remove();
 			}
 		});
 	});
 });	
+
 
 
 
