@@ -228,7 +228,7 @@ textarea:focus, input:focus {
 	}
 }
 
-@media screen and (max-width:990px) {
+@media screen and (max-width:1243px) {
 	.note {
 		width:29%;
 	}
@@ -241,7 +241,7 @@ textarea:focus, input:focus {
 	}
 }
 
-@media screen and (max-width: 759px) {
+@media screen and (max-width: 907px) {
 	.note {
 		width:45%;
 	}
