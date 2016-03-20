@@ -1,8 +1,12 @@
 $(document).ready(function() {	
+	// When clicking the Add Sticky Button create the Modal Form Window and all the functionality by executing the showForm function!
 	$('#newnote').on('click',function() {
 		showForm(formContent,fadeSpeed);
 	});
 });
+
+
+// This is the content that is going to be created each time you try to create a new sticky. It creates the modal window and the form inside with empty text
 
 var formContent = '<div class="modal">' +
 			'<span class="closebutton"></span>' +
@@ -13,11 +17,20 @@ var formContent = '<div class="modal">' +
 			'<button class="btn">Save Note and Exit</button></div>', 
 			fadeSpeed = 500;
 
-function test(reference) {
+/*The refer function help us keeping a reference with specific element by adding a class to it so it can be easily accessible later.
+We do this because we want to have access to the element with inline Javascript. 
+*/
+
+function refer(reference) {
 		$(reference).addClass('something');
 				}
 
-function execute(speed) {
+/*This the modal window but with a little bit different content than this of the showForm function.
+This is because the content that is loaded is the same but the input and textarea fields are filled with
+the current value. Note that this function is triggered only when the users wants to update the note!
+*/
+
+function editNote(speed) {
 	var updateContent = '<div class="modal">' +
 			'<span class="closebutton"></span>' +
 			'<label id="texter" for="title">Title\'s Note</label><br>' +
@@ -47,7 +60,7 @@ function execute(speed) {
 				$('.overlay').remove();
 				$('.modal').remove();
 			},speed);
-			$('body').find('.something').html('<div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="test(this.parentNode); execute(fadeSpeed);">Edit Note</button>');
+			$('body').find('.something').html('<div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button>');
 			$('.note').find('.edit').next().remove();
 			$('.something').removeClass('something');
 			$('.close').on('click',function() {
@@ -57,6 +70,10 @@ function execute(speed) {
 	});
 }
 
+/*This is the function that creates the modal window and the form in it's empty mode. The function is triggered
+when the users wants to create a new note and Add a new sticky! This function creates also all the buttons and
+actions that are created from it and are nested to it.
+*/
 
 
 function showForm(content,speed) {	
@@ -81,7 +98,7 @@ function showForm(content,speed) {
 				$('.overlay').remove();
 				$('.modal').remove();
 			},speed);
-			$('body').append('<div class="note"><div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="test(this.parentNode); execute(fadeSpeed);">Edit Note</button><div>');
+			$('body').append('<div class="note"><div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button><div>');
 			$('.note').find('.edit').next().remove();
 			$('.close').on('click',function() {
 				$(this).parent().hide().remove();
