@@ -33,6 +33,10 @@ body {
 	float: left;
 }
 
+.note, .edit, .btn, input, textarea {
+	transition: all 0.3s linear;
+}
+
 .note h4 {
 	text-align: center;
 	font-size:1.4em;
@@ -100,7 +104,6 @@ textarea:focus, #newnote:focus {
 	position: relative;
 	top:-20px;
 	font-size: 1.3em;
-	transition: all 0.3s linear;
 }
 
 .edit:hover {
@@ -141,7 +144,6 @@ textarea:focus, #newnote:focus {
 	border:none;
 	border-radius: 5px;
 	font-size:1.2em;
-	transition:all 0.3s linear;
 	z-index:600;
 }
 
@@ -171,7 +173,6 @@ input {
 	border:none;
 	border-radius:10px;
 	text-align: center;
-	transition: box-shadow 0.3s linear;
 	font-size:1.1em;
 	font-family: tahoma;
 	font-weight: bold;
@@ -186,12 +187,11 @@ textarea {
 	border-radius: 15px;
 	font-size:1.2em;
 	font-family: tahoma;
-	transition: box-shadow 0.3s linear;
 	padding:2%;
 	box-sizing: border-box;
 }
 
-textarea:focus, input:focus {
+textarea:focus, input:focus, .note:hover {
 	box-shadow:5px 5px 10px rgba(0,0,0,0.6);
 }
 
