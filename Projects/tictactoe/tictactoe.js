@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	var turns = 0;
 	$('#board li').on('click',function() {
 		if(turns % 2 === 0) {
 			if($(this).hasClass('disable')) {
@@ -7,8 +6,10 @@ $(document).ready(function() {
 			}else {
 			$(this).text('o');
 			$(this).addClass('disable o');
-			check('o');
 			turns++;
+			check('o');
+			console.log(turns);
+			draw();
 		}
 	}
 		else {
@@ -17,12 +18,19 @@ $(document).ready(function() {
 			} else {
 			$(this).text('x');
 			$(this).addClass('disable x');
-			check('x');
 			turns++;
+			check('x');
+			console.log(turns);
+			draw();
 			}
 		}
 	});
+	$('#reset').on('click',function() {
+		newGame();
+	});
 });
+
+var turns = 0;
 
 function check(className) {
 	if(
@@ -41,4 +49,24 @@ function check(className) {
 		$('#board li').text('+');
 		$('#board li').removeClass('x o');
 	}
+}
+
+function draw() {
+	if (turns == 9) {
+		alert('It seems that we have a tie! Try a new game!');
+		turns = 0;
+		$('#board li').removeClass('disable');
+		$('#board li').text(('+'));
+		$('#board li').removeClass('x o');
+	}
+}
+
+function newGame() {
+	var confirmation = confirm('Are you sure you want to start a new game?');
+	if(confirmation === true) {
+		turns = 0;
+		$('#board li').removeClass('disable');
+		$('#board li').text(('+'));
+		$('#board li').removeClass('x o');
+		}
 }
