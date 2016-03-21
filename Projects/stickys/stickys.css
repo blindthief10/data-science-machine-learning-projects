@@ -240,9 +240,6 @@ textarea:focus, input:focus, .note:hover {
 		width:80%;
 		left:10%;
 	}
-}
-
-@media screen and (max-width: 907px) {
 	.note {
 		width:45%;
 	}
