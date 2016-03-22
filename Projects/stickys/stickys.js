@@ -1,12 +1,14 @@
 $(document).ready(function() {	
-	// When clicking the Add Sticky Button create the Modal Form Window and all the functionality by executing the showForm function!
+	// When clicking the Add Sticky Button create the Modal Form Window 
+	// and all the functionality by executing the showForm function!
 	$('#newnote').on('click',function() {
 		showForm(formContent,fadeSpeed);
 	});
 });
 
 
-// This is the content that is going to be created each time you try to create a new sticky. It creates the modal window and the form inside with empty text
+// This is the content that is going to be created each time you try to create a new sticky. 
+// It creates the modal window and the form inside with empty text
 
 var formContent = '<div class="modal">' +
 			'<span class="closebutton"></span>' +
