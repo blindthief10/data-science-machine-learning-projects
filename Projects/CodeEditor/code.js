@@ -7,7 +7,7 @@ $(document).ready(function() {
 		$('#runButton').on('click',runShow);
 });
 
-function roar() {
+function getWidth() {
 	return $('.active').length;
 }
 
@@ -22,35 +22,38 @@ function calculateHeight(selector) {
 function cssShow() {
 		$(this).toggleClass('active');
 		$('#cssContainer').toggle();
-		var count = roar();
+		var count = getWidth();
 		$('.codeContainer').css('width',100/count + '%');
 }
+
 
 function htmlShow() {
 		$(this).toggleClass('active');
 		$('#htmlContainer').toggle();
-		var count = roar();
+		var count = getWidth();
 		$('.codeContainer').css('width',100/count + '%');
 }
 
 function javascriptShow() {
 		$(this).toggleClass('active');
 		$('#javascriptContainer').toggle();
-		var count = roar();
+		var count = getWidth();
 		$('.codeContainer').css('width',100/count + '%');
 }
 
 function resultShow() {
 		$(this).toggleClass('active');
 		$('#resultContainer').toggle();
-		var count = roar();
+		var count = getWidth();
 		$('.codeContainer').css('width',100/count + '%');
 }
+
 
 function runShow() {
 	$('iframe').contents().find('html').html('<style>'+$('#cssCode').val() + '</style>'+($('#htmlCode').val()));
 	document.getElementById('inlineFrame').contentWindow.eval($('#javascriptCode').val());
 }
+
 
 
 
