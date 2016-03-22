@@ -1,9 +1,9 @@
 $(document).ready(function() {
 		calculateHeight('.codeContainer');
-		$('#css').on('click',cssShow);
-		$('#html').on('click',htmlShow);
-		$('#javascript').on('click',javascriptShow);
-		$('#result').on('click',resultShow);
+		$('#css').on('click',containerShow);
+		$('#html').on('click',containerShow);
+		$('#javascript').on('click',containerShow);
+		$('#result').on('click',containerShow);
 		$('#runButton').on('click',runShow);
 });
 
@@ -19,35 +19,12 @@ function calculateHeight(selector) {
 		return some;
 }
 
-function cssShow() {
+function containerShow() {
 		$(this).toggleClass('active');
-		$('#cssContainer').toggle();
+		$('#' + $(this).attr('id') + 'Container').toggle();
 		var count = getWidth();
 		$('.codeContainer').css('width',100/count + '%');
 }
-
-
-function htmlShow() {
-		$(this).toggleClass('active');
-		$('#htmlContainer').toggle();
-		var count = getWidth();
-		$('.codeContainer').css('width',100/count + '%');
-}
-
-function javascriptShow() {
-		$(this).toggleClass('active');
-		$('#javascriptContainer').toggle();
-		var count = getWidth();
-		$('.codeContainer').css('width',100/count + '%');
-}
-
-function resultShow() {
-		$(this).toggleClass('active');
-		$('#resultContainer').toggle();
-		var count = getWidth();
-		$('.codeContainer').css('width',100/count + '%');
-}
-
 
 function runShow() {
 	$('iframe').contents().find('html').html('<style>'+$('#cssCode').val() + '</style>'+($('#htmlCode').val()));

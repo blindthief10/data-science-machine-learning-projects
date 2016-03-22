@@ -73,6 +73,11 @@ nav {
 	height:100%;
 }
 
+#toggles li:hover {
+	background:darkgreen;
+	cursor: pointer;
+}
+
 .codeContainer {
 	float:left;
 	margin:0;
