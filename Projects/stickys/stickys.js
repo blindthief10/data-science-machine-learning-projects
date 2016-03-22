@@ -16,6 +16,7 @@ var formContent = '<div class="modal">' +
 			'<textarea name="text"></textarea>' +
 			'<button class="btn">Save Note and Exit</button></div>', 
 			fadeSpeed = 500;
+			
 
 /*The refer function help us keeping a reference with specific element by adding a class to it so it can be easily accessible later.
 We do this because we want to have access to the element with inline Javascript. 
