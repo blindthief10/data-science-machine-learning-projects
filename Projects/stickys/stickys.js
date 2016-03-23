@@ -53,7 +53,7 @@ function editNote(speed) {
 		},speed);
 	});
 	$('.btn').on('click',function() {
-		var title = $('input').val(), text = $('textarea').val();
+	var title = $('input').val(), text = $('textarea').val();		
 		if(title === '' || text === '') {
 			alert('You must include a title and a text for your note');
 		}else {
