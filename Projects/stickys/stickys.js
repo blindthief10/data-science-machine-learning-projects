@@ -5,7 +5,9 @@ $(document).ready(function() {
 		console.log(obj);
 		console.log(count);
 	for (var key in JSON.parse(localStorage.getItem('notes'))) {
-	$('body').append('<div class="note" data-role="'+JSON.parse(localStorage.getItem('notes'))[key].datarole+'"><div class="close"></div><h4>'+JSON.parse(localStorage.getItem('notes'))[key].title+'</h4><p>'+JSON.parse(localStorage.getItem('notes'))[key].text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button></div>');
+	$('body').append('<div class="note" data-role="'+JSON.parse(localStorage.getItem('notes'))[key].datarole+'">'+
+		'<div onclick="another(this.parentNode);" class="clojure"></div><h4>'+JSON.parse(localStorage.getItem('notes'))[key].title+'</h4><p>'+JSON.parse(localStorage.getItem('notes'))[key].text+'</p>'+
+		'<button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button></div>');
 	}
 }
 	// When clicking the Add Sticky Button create the Modal Form Window 
@@ -14,6 +16,7 @@ $(document).ready(function() {
 	$('#newnote').on('click',function() {
 		showForm(formContent,fadeSpeed);
 	});
+
 	
 });
 // This is the content that is going to be created each time you try to create a new sticky. 
@@ -30,7 +33,17 @@ var formContent = '<div class="modal">' +
 			count = 0,
 			obj = {};
 			
-
+function another(referred) {
+	$(referred).addClass('storageTempo');
+	for (var omega in obj) {
+		if (obj[omega].datarole === parseInt($('.storageTempo').attr('data-role'))) {
+			delete obj[omega];
+		}
+	}
+	$(referred).hide().remove();
+	localStorage.setItem('notes',JSON.stringify(obj));
+	console.log(JSON.parse(localStorage.getItem('notes')));
+}
 /*The refer function help us keeping a reference with specific element by adding a class to it so it can be easily accessible later.
 We do this because we want to have access to the element with inline Javascript. 
 */
@@ -54,13 +67,14 @@ function editNote(speed) {
 			'<button class="btn">Save Note and Exit</button></div>';
 
 	$('body').append('<div class="overlay"></div>');
-		$('body').append(updateContent).find('.modal').fadeIn(speed);
+	$('body').append(updateContent).find('.modal').fadeIn(speed);
 	$('.closebutton').on('click',function() {
 		$(this).closest('body').find('.overlay').fadeOut(speed);
 		$(this).parent().fadeOut(speed);
 			setTimeout(function() {
 			$('.overlay').remove();
 			$('.modal').remove();
+			$('.something').removeClass('something');
 		},speed);
 	});
 	$('.btn').on('click',function() {
@@ -75,10 +89,26 @@ function editNote(speed) {
 				$('.modal').remove();
 			},speed);
 			$('body').find('.something').html('<div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button>');
+			for (var take in obj) {
+				if (obj[take].datarole === parseInt($('.something').attr('data-role'))) {
+					obj[take].title = title;
+					obj[take].text = text;
+				}
+			}
+			localStorage.setItem('notes',JSON.stringify(obj));
+			console.log(JSON.parse(localStorage.getItem('notes')));
 			$('.note').find('.edit').next().remove();
 			$('.something').removeClass('something');
 			$('.close').on('click',function() {
-				$(this).parent().hide().remove();
+				$(this).parent().addClass('localtempo');
+				for (var y in obj) {
+					if (obj[y].datarole === parseInt($('.localtempo').attr('data-role'))) {
+					delete obj[y];
+					}
+				}
+				$('.localtempo').hide().remove();
+				localStorage.setItem('notes',JSON.stringify(obj));
+				console.log(JSON.parse(localStorage.getItem('notes')));
 			});	
 		}
 	});
@@ -120,7 +150,15 @@ function showForm(content,speed) {
 			console.log(JSON.parse(localStorage.getItem('notes')));
 			$('.note').find('.edit').next().remove();
 			$('.close').on('click',function() {
-				$(this).parent().hide().remove();
+				$(this).parent().addClass('temporary')
+				for (var z in obj) {
+					if (obj[z].datarole === parseInt($('.temporary').attr('data-role'))) {
+					delete obj[z];
+					}
+				}
+				$('.temporary').hide().remove();
+				localStorage.setItem('notes',JSON.stringify(obj));
+				console.log(JSON.parse(localStorage.getItem('notes')));
 			});	
 		}
 	});

@@ -57,7 +57,7 @@ body {
 	margin-bottom: 50px;
 }
 
-.closebutton, .close {
+.closebutton, .close, .clojure {
 	background-image: url('images/remove.png');
 	height:30px;
 	width:30px;
@@ -73,20 +73,20 @@ body {
 	position:absolute;
 }
 
-.closebutton:hover, .close:hover {
+.closebutton:hover, .close:hover, .clojure:hover {
 	cursor: pointer;
 }
 
 .closebutton:focus, .close:focus, .edit:focus, input:focus, .btn:focus,
-textarea:focus, #newnote:focus {
+textarea:focus, #newnote:focus, .clojure:focus {
 	outline: none;
 }
 
-.closebutton:active, .close:active {
+.closebutton:active, .close:active, .clojure:active {
 	background-image: url('images/remove_pushed.png');
 }
 
-.close {
+.close, .clojure {
 	position: relative;
 	top:-10px;
 	left:95%;
