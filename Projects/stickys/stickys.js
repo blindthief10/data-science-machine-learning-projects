@@ -1,12 +1,21 @@
 $(document).ready(function() {	
+	if (localStorage.getItem('notes')) {
+		count = JSON.parse(localStorage.getItem('count'));
+		obj = JSON.parse(localStorage.getItem('notes'));
+		console.log(obj);
+		console.log(count);
+	for (var key in JSON.parse(localStorage.getItem('notes'))) {
+	$('body').append('<div class="note" data-role="'+JSON.parse(localStorage.getItem('notes'))[key].datarole+'"><div class="close"></div><h4>'+JSON.parse(localStorage.getItem('notes'))[key].title+'</h4><p>'+JSON.parse(localStorage.getItem('notes'))[key].text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button></div>');
+	}
+}
 	// When clicking the Add Sticky Button create the Modal Form Window 
 	// and all the functionality by executing the showForm function!
+
 	$('#newnote').on('click',function() {
 		showForm(formContent,fadeSpeed);
 	});
+	
 });
-
-
 // This is the content that is going to be created each time you try to create a new sticky. 
 // It creates the modal window and the form inside with empty text
 
@@ -17,7 +26,9 @@ var formContent = '<div class="modal">' +
 			'<label id="area" for="text">Note\'s Body Text</label><br>' +
 			'<textarea name="text"></textarea>' +
 			'<button class="btn">Save Note and Exit</button></div>', 
-			fadeSpeed = 500;
+			fadeSpeed = 500,
+			count = 0,
+			obj = {};
 			
 
 /*The refer function help us keeping a reference with specific element by adding a class to it so it can be easily accessible later.
@@ -95,13 +106,18 @@ function showForm(content,speed) {
 		if(title === '' || text === '') {
 			alert('You must include a title and a text for your note');
 		}else {
+			count++;
 			$(this).closest('body').find('.overlay').fadeOut(speed);
 			$(this).parent().fadeOut(speed);
 				setTimeout(function() {
 				$('.overlay').remove();
 				$('.modal').remove();
 			},speed);
-			$('body').append('<div class="note"><div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button><div>');
+			$('body').append('<div data-role="'+count+'" class="note"><div class="close"></div><h4>'+title+'</h4><p>'+text+'</p><button class="edit" onclick="refer(this.parentNode); editNote(fadeSpeed);">Edit Note</button><div>');
+			obj['var'+count] = {datarole:count, title:title, text:text};
+			localStorage.setItem('notes',JSON.stringify(obj));
+			localStorage.setItem('count',JSON.stringify(count));
+			console.log(JSON.parse(localStorage.getItem('notes')));
 			$('.note').find('.edit').next().remove();
 			$('.close').on('click',function() {
 				$(this).parent().hide().remove();
@@ -109,6 +125,8 @@ function showForm(content,speed) {
 		}
 	});
 }
+
+
 
 
 			
