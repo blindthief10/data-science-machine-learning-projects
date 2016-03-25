@@ -124,7 +124,7 @@ textarea:focus, #newnote:focus, .clojure:focus {
 	}
 
 .modal {
-	position: fixed;
+	position: absolute;
 	left:25%;
 	top:100px;
 	width:50%;
