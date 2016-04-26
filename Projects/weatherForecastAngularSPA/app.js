@@ -4,11 +4,14 @@ angular.module('weatherApp', ['ngRoute', 'ngResource'])
 	this.city = 'Athens';
 })
 
-.controller('homeController', ['$scope', 'cityForecast', '$http', function($scope, cityForecast, $http) {
+.controller('homeController', ['$scope', 'cityForecast', '$http', '$location', function($scope, cityForecast, $http, $location) {
 	$scope.city = cityForecast.city;
 	$scope.$watch('city', function() {
 		cityForecast.city = $scope.city;
 	});
+	$scope.submit = function() {
+		$location.path('/forecast');
+	}
 }])
 
 .controller('forecastController', ['$scope', '$http', 'cityForecast', function($scope, $http, cityForecast) {
