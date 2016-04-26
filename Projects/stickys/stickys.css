@@ -1,5 +1,5 @@
 body {
-	background-image: url('images/corkboard.jpg');
+	background-image: url('corkboard.jpg');
 }
 
 #newnote {
@@ -58,7 +58,7 @@ body {
 }
 
 .closebutton, .close, .clojure {
-	background-image: url('images/remove.png');
+	background-image: url('remove.png');
 	height:30px;
 	width:30px;
 }
@@ -83,7 +83,7 @@ textarea:focus, #newnote:focus, .clojure:focus {
 }
 
 .closebutton:active, .close:active, .clojure:active {
-	background-image: url('images/remove_pushed.png');
+	background-image: url('remove_pushed.png');
 }
 
 .close, .clojure {
