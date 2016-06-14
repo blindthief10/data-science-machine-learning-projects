@@ -1,6 +1,7 @@
 <div class="container">
 	<h3>Weather forecast for the next week in {{city}}</h3>
 	<div ng-repeat="weatheral in weatherData.list">
+		<!-- Attaching different class based on the city temperature -->
 		<div class="panel" ng-class="{'panel-danger': convertCelsius(weatheral.temp.day) > 35, 'panel-warning': convertCelsius(weatheral.temp.day) > 30, 'panel-success': convertCelsius(weatheral.temp.day) > 25,
 		'panel-info': convertCelsius(weatheral.temp.day) > 20, 'panel-primary': convertCelsius(weatheral.temp.day) > 10, 'panel-default': convertCelsius(weatheral.temp.day) <= 10}">
 			<div class="panel-heading">{{returnDate(weatheral.dt) | date}}</div>
@@ -8,4 +9,3 @@
 		</div>
 	</div>
 </div>
-
