@@ -19,7 +19,7 @@ module.exports = function(app) {
     })
   })
 
-  app.post('/api/todos', function(req, res) {
+  app.post('/api/todo', function(req, res) {
     if (req.body.id) {
       Todos.findByIdAndUpdate(req.body.id, {todo: req.body.todo,
          isDone: req.body.isDone,
@@ -29,7 +29,7 @@ module.exports = function(app) {
       })
     } else {
       var newTodo = Todos({
-        username: 'Kostas',
+        username: 'blindthief10',
         todo: req.body.todo,
         isDone: req.body.isDone,
         hasAttachment: req.body.hasAttachment
@@ -41,8 +41,8 @@ module.exports = function(app) {
     }
   })
 
-  app.delete('api/todo', function(req, res) {
-    Todos.findByIdAndRemove(req.body.id, function(err) {
+  app.delete('/api/todo', function(req, res) {
+    Todos.findByIdAndRemove(req.body.id, function(err, results) {
       if (err) throw err;
       res.send('Success! Data was deleted!');
     })
