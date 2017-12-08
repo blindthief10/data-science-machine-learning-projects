@@ -1,4 +1,0 @@
-{
-  "host": "http://localhost:4000",
-  "dbURI": "mongodb://octochatuser:sanktpaulikiller@ds017165.mlab.com:17165/octochatdb"
-}
